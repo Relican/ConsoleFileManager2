@@ -1,66 +1,45 @@
 import shutil, os, re
 from datetime import datetime
 import random
+from .config import lorem
 
 
 # создание файлового каталога
 def creation():
-    os.makedirs(r"C:\FileCatalog\Catalog1")
-    os.makedirs(r"C:\FileCatalog\Catalog2")
-    os.makedirs(r"C:\FileCatalog\Catalog3")
-    os.makedirs(r"C:\FileCatalog\Catalog4\Catalog4_1")
-    os.makedirs(r"C:\FileCatalog\Catalog4\Catalog4_2")
-    os.makedirs(r"C:\FileCatalog\Catalog5\Catalog5_1")
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog1"))
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog2"))
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog3"))
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_1"))
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_2"))
+    os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog5", r"Catalog5_1"))
 
-    i = 0
-    for i in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog1\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        i += 1
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog1", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
 
-    j = 0
-    for j in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog2\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        j += 1
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog2", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
 
-    k = 0
-    for k in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog3\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        k += 1
 
-    l = 0
-    for l in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog4\Catalog4_1\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        l += 1
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog3", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
 
-    m = 0
-    for m in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog4\Catalog4_2\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        m += 1
 
-    n = 0
-    for n in range(random.randint(1, 10000)):
-        my_file = open(r"C:\FileCatalog\Catalog5\Catalog5_1\File1.txt", "a+")
-        my_file.write(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n")
-        my_file.close()
-        n += 1
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_1", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
 
-    return r'Тестовый каталог по пути C:\FileCatalog\ создан'
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_2", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
+
+    my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog5", r"Catalog5_1", r"File1.txt"), "a+")
+    my_file.write(lorem * random.randint(1, 10000))
+    my_file.close()
+
+    return r'Тестовый каталог создан'
 
 
 # копирование файла

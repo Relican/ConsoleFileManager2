@@ -2,7 +2,7 @@
 This is a simple console file manager written on Python
 
 ~First things first:
-1. Run <code>python manager.py create</code> to create catalog with files to test on. Catalog is found in C:\FileCatalog\
+1. Run <code>python manager.py create</code> to create catalog with files to test on. Catalog is found in python project directory
 2. Use manager.py via console for test purposes.
 3. To run unittests use console: <br>
 <code>python manager_test.py</code> <br> 
