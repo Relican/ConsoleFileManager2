@@ -81,7 +81,7 @@ def search(path, search_string):
     file_list = []
     for address, dirs, files in os.walk(path):
         for name in files:
-            if re.search(search_string, name) is not None:
+            if re.search(str(search_string).lower(), str(name).lower()) is not None:
                 file_list.append(os.path.join(address, name))
     return file_list
 
