@@ -9,9 +9,11 @@ import utils
 class TestCLI(unittest.TestCase):
 
     def test_cli_valid_expressions(self):
+        if os.path.exists(os.path.join(os.getcwd(), r"TestCatalog")):
+            os.rmdir(os.path.join(os.getcwd(), r"TestCatalog"))
         os.mkdir(os.path.join(os.getcwd(), r"TestCatalog"))
         my_file = open(os.path.join(os.getcwd(), r"TestCatalog", r"File1.txt"), "a+")
-        my_file.write(utils.lorem)
+        my_file.write(utils.LOREM)
         my_file.close()
 
         test_cases = [
@@ -30,9 +32,11 @@ class TestCLI(unittest.TestCase):
         os.rmdir(os.path.join(os.getcwd(), r"TestCatalog"))
 
     def test_cli_invalid_expressions(self):
+        if os.path.exists(os.path.join(os.getcwd(), r"TestCatalog")):
+            os.rmdir(os.path.join(os.getcwd(), r"TestCatalog"))
         os.mkdir(os.path.join(os.getcwd(), r"TestCatalog"))
         my_file = open(os.path.join(os.getcwd(), r"TestCatalog", r"File1.txt"), "a+")
-        my_file.write(utils.lorem)
+        my_file.write(utils.LOREM)
         my_file.close()
 
         test_cases = [

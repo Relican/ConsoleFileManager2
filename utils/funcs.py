@@ -1,11 +1,13 @@
 import shutil, os, re
 from datetime import datetime
 import random
-from .config import lorem
+from .config import LOREM
 
 
 # создание файлового каталога
 def creation():
+    if os.path.exists(os.path.join(os.getcwd(), r"FileCatalog")):
+        os.rmdir(os.path.join(os.getcwd(), r"FileCatalog"))
     os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog1"))
     os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog2"))
     os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog3"))
@@ -14,29 +16,29 @@ def creation():
     os.makedirs(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog5", r"Catalog5_1"))
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog1", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog2", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog3", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_1", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog4", r"Catalog4_2", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
     my_file = open(os.path.join(os.getcwd(), r"FileCatalog", r"Catalog5", r"Catalog5_1", r"File1.txt"), "a+")
-    my_file.write(lorem * random.randint(1, 10000))
+    my_file.write(LOREM * random.randint(1, 10000))
     my_file.close()
 
     return r'Тестовый каталог создан'
