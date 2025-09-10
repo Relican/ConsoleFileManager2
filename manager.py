@@ -1,12 +1,11 @@
 import argparse
 import utils
-import os
 
 operations = {
     "create": utils.creation,
     "copy": utils.copy,
     "delete": utils.delete,
-    "nf": utils.nf,
+    "nf": utils.num_files,
     "search": utils.search,
     "add": utils.add,
     "analyse": utils.analyse
