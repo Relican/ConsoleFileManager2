@@ -52,7 +52,7 @@ def main(page: ft.Page):
         page.update()
 
     def nf(e):
-        result.value = str(funcs.nf(str(dir.value)))
+        result.value = str(funcs.num_files(str(dir.value)))
         result.update()
         page.update()
 
