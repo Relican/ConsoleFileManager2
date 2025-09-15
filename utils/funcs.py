@@ -109,4 +109,5 @@ def analyse(path):
         elif os.path.isfile(folder_path):
             folder_size = os.path.getsize(folder_path)
             folder_list.append(f"\U0001F4C4 {folder_name} — Размер: {folder_size / (1024 * 1024):.2f} MB")
+
     return "\n".join(sorted(folder_list))
