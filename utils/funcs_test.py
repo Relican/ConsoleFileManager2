@@ -41,7 +41,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_analyse(self):
         analyse_result = analyse(os.path.join(os.getcwd(), r"TestCatalog"))
-        self.assertEqual(analyse_result, 'Файл: File1.txt — Размер: 0.00 MB')
+        self.assertEqual(analyse_result, '\U0001F4C4 File1.txt — Размер: 0.00 MB')
 
     def tearDown(self):
         shutil.rmtree(os.path.join(os.getcwd(), r"TestCatalog"))
