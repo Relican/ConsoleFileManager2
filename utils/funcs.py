@@ -73,7 +73,7 @@ def search(path, search_string):
     file_list = []
     for address, dirs, files in os.walk(path):
         for name in files:
-            if re.search(search_string, name) is not None:
+            if re.search(str(search_string).lower(), str(name).lower()) is not None:
                 file_list.append(os.path.join(address, name))
     return file_list
 
@@ -100,14 +100,14 @@ def get_folder_size(path):
 
 
 def analyse(path):
-    print(f"Общий размер: {get_folder_size(path) / (1024 * 1024):.2f} MB")
     folder_list = []
     for folder_name in os.listdir(path):
         folder_path = os.path.join(path, folder_name)
         if os.path.isdir(folder_path):
             folder_size = get_folder_size(folder_path)
-            folder_list.append(f"Папка: {folder_name} — Размер: {folder_size / (1024 * 1024):.2f} MB")
+            folder_list.append(f"\U0001F4C1 {folder_name} — Размер: {folder_size / (1024 * 1024):.2f} MB")
         elif os.path.isfile(folder_path):
             folder_size = os.path.getsize(folder_path)
-            folder_list.append(f"Файл: {folder_name} — Размер: {folder_size / (1024 * 1024):.2f} MB")
+            folder_list.append(f"\U0001F4C4 {folder_name} — Размер: {folder_size / (1024 * 1024):.2f} MB")
+
     return "\n".join(sorted(folder_list))
